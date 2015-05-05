@@ -12,7 +12,6 @@ try:
     last_post_id = int(open('last_post_id.txt').read())
 except FileNotFoundError:
     response = json.loads(requests.get(vk_api_url).text)
-    print(response)
     last_post_id = response['response'][1]['id']
 
 
